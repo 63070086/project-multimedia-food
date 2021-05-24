@@ -7,22 +7,6 @@
     <title>ForMia</title>
     <link href="style.css" rel="stylesheet">
     <script src="script.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-
-    <script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyCvZNIUHnWeiIoxksed2Z0qQS4dvhx_ws8",
-        authDomain: "formia-a6350.firebaseapp.com",
-        projectId: "formia-a6350",
-        storageBucket: "formia-a6350.appspot.com",
-        messagingSenderId: "279959318169",
-        appId: "1:279959318169:web:03cf0938fe37c5632a1208",
-        measurementId: "G-X6QJW2JV9L"
-    };
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    </script>
 </head>
 <body>
     <!-- หน้าต่างเมนู -->
@@ -30,33 +14,38 @@
     <div class="pop_up_tutorial">
         <div class="exist_pop_up_tutorial button" onclick="exist_pop_up_tutorial()"></div>
         <div class="mySlides fade">
-            <div class="numbertext">1 / 5</div>
-            <img src="picture/father_normal.png" style="width:100%; height: 100%;">
-            <div class="text">Caption Text</div>
+            <div class="numbertext">1 / 7</div>
+            <img src="picture/page1.jpg" style="width:100%; height: 100%;">
           </div>
           
           <div class="mySlides fade">
-            <div class="numbertext">2 / 5</div>
-            <img src="picture/father_o.png" style="width:100%; height: 100%;">
-            <div class="text">Caption Two</div>
+            <div class="numbertext">2 / 7</div>
+            <img src="picture/page2-1.jpg" style="width:100%; height: 100%;">
           </div>
           
           <div class="mySlides fade">
-            <div class="numbertext">3 / 5</div>
-            <img src="picture/father_smile.png" style="width:100%; height: 100%;">
-            <div class="text">Caption Three</div>
+            <div class="numbertext">3 / 7</div>
+            <img src="picture/page2-2.jpg" style="width:100%; height: 100%;">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">4 / 5</div>
-            <img src="picture/father_angry.png" style="width:100%; height: 100%;">
-            <div class="text">Caption Three</div>
+            <div class="numbertext">4 / 7</div>
+            <img src="picture/page3.jpg" style="width:100%; height: 100%;">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">5 / 5</div>
-            <img src="picture/window_father.PNG" style="width:100%; height: 100%;">
-            <div class="text">Caption Three</div>
+            <div class="numbertext">5 / 7</div>
+            <img src="picture/page4.jpg" style="width:100%; height: 100%;">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">6 / 7</div>
+            <img src="picture/page5.jpg" style="width:100%; height: 100%;">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">7 / 7</div>
+            <img src="picture/page6.jpg" style="width:100%; height: 100%;">
           </div>
           
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -67,7 +56,6 @@
     </div>
     <div class="pop_up_lose" id="lose_pop">
         <div class="box_option_pop_up">
-            <div class="icon_menu_2 button" onclick="change_to_menu()"></div>
             <a href="https://trusting-nobel-40091b.netlify.app/">
                 <div class="box_page_2"></div>
             </a>
@@ -76,7 +64,6 @@
     </div>
     <div class="pop_up_win" id="win_pop">
         <div class="box_option_pop_up">
-            <div class="icon_menu_2 button" onclick="change_to_menu()"></div>
             <a href="https://trusting-nobel-40091b.netlify.app/">
                 <div class="box_page_2"></div>
             </a>
@@ -176,7 +163,7 @@
             </div>
             <div class="icon_hungry" id="hungry"></div>
         </div>
-        <div class="father">
+        <div class="father" id="father">
             <img src="picture/window_father.PNG">
         </div>
     </div>
@@ -192,11 +179,11 @@
         document.getElementById("info").style.opacity = "1";
         }, false);
     carrot.addEventListener("mouseover", function(){
-        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>แครอท</span><br>-เพิ่มหลอดการเจริญเติบโต 15 หน่วย<br>-ราคา 1500";
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>แครอท</span><br>-เพิ่มหลอดการเจริญเติบโต 15 หน่วย<br>-ราคา 2000";
         document.getElementById("info").style.opacity = "1";
         }, false);
     cabbage.addEventListener("mouseover", function(){
-        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>กะหล่ำ</span><br>-เพิ่มหลอดการเจริญเติบโต 20 หน่วย<br>-ราคา 2000";
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>กะหล่ำ</span><br>-เพิ่มหลอดการเจริญเติบโต 20 หน่วย<br>-ราคา 3000";
         document.getElementById("info").style.opacity = "1";
         }, false);
     vitamin.addEventListener("mouseover", function(){
@@ -302,7 +289,7 @@
     // โชวข้อมูลของหลอดอารมณ์ หน้าต่างร้านค้า
     bar_showinfo.addEventListener("mouseover", function(){
         document.getElementById("show_info").style.opacity = "1";
-        document.getElementById("show_info").innerHTML = "หลอดแสดงการสะสมเชื้อดื้อยาของลูกค้า<br>-ถ้าเกิน 80% เราจะเสียลูกค้าไปตลอด";
+        document.getElementById("show_info").innerHTML = "หลอดแสดงการสะสมเชื้อดื้อยาของลูกค้า<br>-ถ้าเกิน 70% เราจะเสียลูกค้าไปตลอด";
         }, false);
     bar_showinfo.addEventListener("mouseleave", function(){
         document.getElementById("show_info").style.opacity = "0";

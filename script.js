@@ -27,7 +27,6 @@ sound_click_icon.volume = .2;
 // ประกาศตัวแปร
 
 function set_value(){
-change_to_pig();
 vaccine.style.boxShadow = "none";
 vitamin.style.boxShadow = "none";
 window_blur.style.zIndex = "0";
@@ -35,10 +34,10 @@ lose_pop.style.top = "100%";
 lose_pop.style.transform = "translate(-50%)";
 win_pop.style.top = "100%";
 win_pop.style.transform = "translate(-50%)";
-game_is_started = 0;
-game_is_paused = 1;
-tutorial_is_show = 0;
-tutorial_in_game = 0;
+game_is_started = 1;
+game_is_paused = 0;
+tutorial_is_show = 1;
+tutorial_in_game = 1;
 
 customer_remove = 0;
 time_use_sound_pig = 0;
@@ -77,6 +76,9 @@ time_call_customer = 0;
 customer_is_done = 0;
 
 buy = 0;
+change_to_pig();
+fill_bar();
+change_burger();
 }
 var game_is_started = 0;
 var game_is_paused = 1;
@@ -127,7 +129,20 @@ setInterval(function () {
     if (game_is_started && !game_is_paused) {
         change_money();
         total_money = total_money - 500;
+        if(total_money <= -10000){
+            father.style.backgroundImage = "url('picture/father_semi_angry.png')";
+        }
+        else if(total_money > 300000){
+            father.style.backgroundImage = "url('picture/father_o.png')";
+        }
+        else if(total_money > 700000){
+            father.style.backgroundImage = "url('picture/father_smile.png')";
+        }
+        else{
+            father.style.backgroundImage = "url('picture/father_normal.png')";
+        }
         if (total_money <= -100000) {
+            father.style.backgroundImage = "url('picture/father_angry.png')";
             lose();
         }
         else if(total_money >= 1000000){
@@ -483,7 +498,14 @@ function use_food(f) {
     keep_fill += fill;
     fill_bar();
     // เช็คหลอดการเจริญเติบโตของหมูว่าถึงไหนแล้ว
-    total_money = total_money - (fill * 100);
+    if(fill == 20){
+        total_money = total_money - 3000;
+    }
+    else if(fill == 15){
+        total_money = total_money - 2000;
+    }else{
+        total_money = total_money - 1000;
+    }
     change_money();
     check_fill_bar();
     // reset ค่า
@@ -501,7 +523,7 @@ function use_supply(h) {
         if (!vitamin_is_using) {
             total_money = total_money - 15000;
             change_money();
-            vitamin.style.boxShadow = "0px 0px 10px black";
+            vitamin.style.boxShadow = "0px 0px 10px 5px black";
             vitamin_is_using = 1;
             clearInterval(interval_vaccine_is_using);
             time_pig_hungry = parseInt(time_hungry);
@@ -519,7 +541,7 @@ function use_supply(h) {
         if (!vaccine_is_using) {
             total_money = total_money - 20000;
             change_money();
-            vaccine.style.boxShadow = "0px 0px 10px black";
+            vaccine.style.boxShadow = "0px 0px 10px 5px black";
             vaccine_is_using = 1;
             interval_vaccine_is_using = setInterval(function () {
                 if (!icon_eto_ready_to_use && !icon_food_ready_to_use) {
@@ -537,7 +559,6 @@ function use_supply(h) {
     }
 }
 function use_eto() {
-    change_burger();
     // เปลี่ยนไอคอนอีโต้ให้ ไม่สามารถกดได้
     icon_eto_ready_to_use = 0;
     change_icon_eto();
@@ -553,6 +574,7 @@ function use_eto() {
         let plus_minus = random_num(40 / 100, 100 / 100);
         store_meat_pig.push(time_vaccine_is_using * plus_minus);
     }
+    change_burger();
     // reset ค่า
     time_check_pig_die = 0;
     time_check_pig_hungry = 0;
@@ -623,7 +645,7 @@ function run_game_shop() {
             setTimeout(function () {
                 if (buy) {
                     sound_money.play();
-                    total_money = total_money + 50000;
+                    total_money = total_money + 30000;
                     change_money();
                     change_burger();
                 }
