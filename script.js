@@ -195,12 +195,14 @@ function change_burger(){
 
 // function แพ้ชนะ
 function lose() {
+    sound_lose.play();
     window_blur.style.zIndex = "3";
     game_is_paused = 1;
     lose_pop.style.top = "50%";
     lose_pop.style.transform = "translate(-50%, -50%)";
 }
 function win() {
+    sound_win.play();
     window_blur.style.zIndex = "3";
     game_is_paused = 1;
     win_pop.style.top = "50%";
@@ -645,7 +647,7 @@ function run_game_shop() {
             setTimeout(function () {
                 if (buy) {
                     sound_money.play();
-                    total_money = total_money + 30000;
+                    total_money = total_money + 50000;
                     change_money();
                     change_burger();
                 }
