@@ -1,21 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap%27');
 *{
-  font-family: 'Sriracha', cursive;
+    font-family: 'Kanit', sans-serif;
 }
 body{
     margin: 0;
     width: 100vw;
     height: 900vh;
-    background: black;
     overflow-x: hidden;
+    scroll-snap-align: center;
+    scroll-snap-type: mandatory;
+}
+body .bg-all{
+    position: absolute;
+    width: 100vw;
+    height: 900vh;
+    z-index: -1;
 }
 .page1{
     width: 100vw;
     height: 100vh;
-    background: url(img/bg6.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,19 +29,14 @@ body{
     font-size: 3rem;
 }
 .page1 #ham{
-    position: fixed;
-    top: 20%;
+    position: absolute;
+    top: 10%;
     left: 80%;
-    transform: translateX(0);
-    transition: all 0.5s ease-in;
+    z-index: 1;
 }
 .page2{
     width: 100vw;
     height: 100vh;
-    background: url(img/bg6.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .page2 #c2{
     position: absolute;
@@ -57,10 +55,6 @@ body{
 .page3{
     width: 100vw;
     height: 100vh;
-    background: url(img/bg6.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,10 +63,6 @@ body{
 .page4{
     width: 100vw;
     height: 100vh;
-    background: url(img/bg7.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,10 +75,6 @@ body{
 .page5{
     width: 100vw;
     height: 100vh;
-    background: url(img/bg1.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .page5 .content{
     display: flex;
@@ -98,13 +84,15 @@ body{
 .page5 h1{
     text-align: center;
 }
-.page5 .bg{
+.page5 .btn-add{
     width: 10vw;
     height: 12vh;
-    background: url(img/d2.PNG);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    box-shadow: #324350 2px 2px 2px 2px;
+    border-radius: 100%;
+    transition: all 0.2s ease-in-out;
+}
+.btn-add:hover{
+    box-shadow: black 4px 4px 4px 4px;
 }
 .button h3{
     color: red;
@@ -116,22 +104,19 @@ body{
     width: 50vw;
     height: 50vh;
     left: 25vw;
+    z-index: 1000;
 }
 .page5 .child-pig{
     width: 24vw;
     height: 24vh;
     background: url(img/p1.png);
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .page6{
     width: 100vw;
     height: 100vh;
-    background: url(img/bg6.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .page6 h1{
     text-align: center;
@@ -169,10 +154,6 @@ body{
 .page6 .pig{
     width: 24vw;
     height: 24vh;
-    background: url(img/p1.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 #pig6{
     transition: all 3s ease-in-out;
@@ -186,20 +167,17 @@ body{
 .page6 .icon{
     width: 24vw;
     height: 24vh;
-    background: url(img/d2.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 .page6 #burger{
     position: absolute;
     width: 5vw;
     height: 10vh;
     left: 48vw;
-    transition: all 1s ease-in-out;
-    transform: translate(0vw ,80vh);
+    top: 510vh;
     opacity: 100%;
     z-index: 1;
+    transition: all 0.1 linear;
+
 }
 .page6 #drug{
     position: absolute;
@@ -226,10 +204,6 @@ body{
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: url(img/bg5.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .page7 img{
     position: absolute;
@@ -237,8 +211,8 @@ body{
 }
 .page7 .popup{
     position: absolute;
-    width: 12vw;
-    height: 6vh;
+    width: 24vw;
+    height: 8vh;
     background: gray;
     border-radius: 24px;
     text-align: center;
@@ -247,6 +221,8 @@ body{
     align-items: center;
     left: 20vw;
     top: 30vh;
+    font-size: 2rem;
+    font-weight: bold;
 }
 @keyframes run {
     0%{
@@ -255,13 +231,12 @@ body{
         transform: translateX(100vw);
     }
 }
+#character{
+    transition: 0.1s linear all;
+}
 .page8{
     width: 100vw;
     height: 100vh;
-    background: url(img/bg6.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .page8 h1{
     position: absolute;
@@ -277,10 +252,6 @@ body{
 .page8 .ham{
     width: 12vw;
     height: 12vh;
-    background: url(img/h1.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
     position: absolute;
     top: 740vh;
     left: 20vw;
@@ -288,12 +259,7 @@ body{
 .page9{
     width: 100vw;
     height: 100vh;
-    background: url();
     text-align: center;
-    background: url(img/bg4.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .page9 .border{
     position: absolute;
