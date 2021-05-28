@@ -90,12 +90,15 @@ body .bg-all{
     box-shadow: #324350 2px 2px 2px 2px;
     border-radius: 100%;
     transition: all 0.2s ease-in-out;
+    background: url(img/d1.png);
+    background-size: contain;
 }
 .btn-add:hover{
     box-shadow: black 4px 4px 4px 4px;
 }
 .button h3{
-    color: red;
+    color: white;
+    font-size: 1.2rem;
 }
 .page5 .pig{
     display: flex;
@@ -117,74 +120,64 @@ body .bg-all{
 .page6{
     width: 100vw;
     height: 100vh;
-}
-.page6 h1{
-    text-align: center;
-}
-.page6 .line{
-    position: absolute;
-    width: 1vw;
-    height: 80vh;
-    background: #094570;
-    left: 50vw;
-    top: 512vh;
-}
-.page6 .right{
-    width: 20vw;
-    height: 80vh;
-    position: absolute;
-    left: 60vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    top: 512vh;
 }
-.page6 .left{
-    width: 20vw;
-    height: 80vh;
-    position: absolute;
-    left: 10vw;
+.page6 .box{
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    top: 510vh;
 }
-.page6 .pig{
-    width: 24vw;
+.page6 h2{
+    position: relative;
+    width: 20vw;
+    height: 6vh;
+    background: transparent;
+    z-index: 1;
+    transform: scaleX(0);
+    transition: 0.5s ease-in-out all;
+    transform-origin: left;
+}
+.page6 h2::before, .page6 h2::after{
+    content: '';
+    left: 0;
+    bottom: 0%;
+    position: absolute;
+    width: 14vw;
+    height: 1vh;
+}
+.page6 h2::before{
+    background: black;
+    z-index: -1;
+}
+.page6 h2::after{
+    background: red;
+    z-index: -2;
+}
+.page6 .icon-drug{
+    width: 10vw;
+    height: 20vh;
+}
+.page6 .icon-pig{
+    width: 12vw;
     height: 24vh;
 }
-#pig6{
-    transition: all 3s ease-in-out;
-    filter: grayscale(0%);
-}
-.page6 h1{
+.in-pig{
     position: absolute;
-    text-align: center;
-    width: 100vw;
+    width: 4vw;
+    height: 8vh;
+    left: 6vw;
+    top: 6vh;
+    animation: rotate 1s ease-in-out infinite alternate;
 }
-.page6 .icon{
-    width: 24vw;
-    height: 24vh;
-}
-.page6 #burger{
-    position: absolute;
-    width: 5vw;
-    height: 10vh;
-    left: 48vw;
-    top: 510vh;
-    opacity: 100%;
-    z-index: 1;
-    transition: all 0.1 linear;
-
-}
-.page6 #drug{
-    position: absolute;
-    left: 80vw;
-    top: 560vh;
-    z-index: 1;
-    transform: translateX(-10vw);
+@keyframes rotate{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(-90deg);
+    }
 }
 @keyframes move {
     0%{
@@ -224,6 +217,19 @@ body .bg-all{
     font-size: 2rem;
     font-weight: bold;
 }
+#burg{
+    left: 20vw;
+    top: 60vh;
+    width: 8vw;
+    height: 12vh;
+    opacity: 0;
+    transition: 1s linear all;
+}
+#popup{
+    transform: scaleX(0);
+    transition: 1s ease-in-out;
+    transform-origin: left;
+}
 @keyframes run {
     0%{
         transform: translateX(0);
@@ -232,7 +238,7 @@ body .bg-all{
     }
 }
 #character{
-    transition: 0.1s linear all;
+    transition: 1s linear all;
 }
 .page8{
     width: 100vw;
@@ -255,6 +261,10 @@ body .bg-all{
     position: absolute;
     top: 740vh;
     left: 20vw;
+}
+#effect{
+    filter: hue-rotate(0deg);
+    transition: all 1s ease-in-out;
 }
 .page9{
     width: 100vw;
