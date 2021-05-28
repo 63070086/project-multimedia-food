@@ -347,41 +347,51 @@ body .bg-all{
     color: white;
 }
 #pig{
-    animation: walk 3s ease-in-out infinite;
-}
-@keyframes walk {
-    0%{
-        transform: translateX(0vw);
-    }50%{
-        transform: translateX(-58vw);
-        opacity: 1;
-    }51%{
-        transform: translateX(-58vw);
-        opacity: 0;
-    }52%{
-        opacity: 1;
-        transform: translateX(100vw);
-    }100%{
-        transform: translateX(0vw);
-    }
+    animation: walk 5s linear infinite;
 }
 #icon{
-    animation: walkd 3s ease-in-out infinite;
+    animation: walk1 6s ease-in-out infinite;
 }
-@keyframes walkd {
+@keyframes walk{
     0%{
-        transform: translateX(0vw);
+        transform: translateX(0) scaleX(1);
+    }24.9%{
+        transform: translateX(-50vw) scaleX(1);
+    }25%{
+        transform: translateX(-50vw) scaleX(-1);
+    }49.5%{
+        transform: translateX(0vw) scaleX(-1);
     }50%{
-        transform: translateX(-54vw);
-        opacity: 1;
-    }51%{
-        transform: translateX(-54vw);
-        opacity: 0;
-    }52%{
-        opacity: 1;
-        transform: translateX(100vw);
-    }100%{
-        transform: translateX(0vw);
+        transform: translateX(0vw) scaleX(-1);
+    }74.5%{
+        transform: translateX(110vw) scaleX(-1);
+    }
+    75%{
+        transform: translateX(110vw) scaleX(1);
+    }
+    100%{
+        transform: translateX(0) scaleX(1);
+    }
+}
+@keyframes walk1{
+    0%{
+        transform: translateX(0)1 scaleX(1) rotateZ(0);
+    }24.9%{
+        transform: translateX(-60vw) scaleX(1) rotateZ(15deg);
+    }25%{
+        transform: translateX(-60vw) scaleX(-1) rotateZ(0);
+    }49.5%{
+        transform: translateX(0vw) scaleX(-1) rotateZ(15deg);
+    }50%{
+        transform: translateX(0vw) scaleX(-1) rotateZ(0);
+    }74.5%{
+        transform: translateX(100vw) scaleX(-1) rotateZ(15deg);
+    }
+    75%{
+        transform: translateX(100vw) scaleX(1) rotateZ(0);
+    }
+    100%{
+        transform: translateX(0) scaleX(1) rotateZ(15deg);
     }
 }
 .drop{

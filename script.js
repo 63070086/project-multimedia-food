@@ -8,6 +8,7 @@ var time2 = 0;
 var run = 0;
 var lastHeight = 0;
 var sec = 0;
+var sec1 = 0;
 window.addEventListener('scroll',function(e){
     scrolled = window.scrollY;
     moveHam += 10;
@@ -69,3 +70,11 @@ setInterval(function(){
         document.getElementById('effect').style.filter = "hue-rotate(0deg)"
     }
 }, 1000)
+setInterval(function(){
+    if (sec1%2 == 0){
+        document.getElementById('pig').src = "img/p3.png";
+    }else{
+        document.getElementById('pig').src = "img/p1.png";
+    }
+    sec1 += 1;
+}, 200)
